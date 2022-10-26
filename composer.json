@@ -1,0 +1,25 @@
+{
+    "name": "laswitchtech/php-smtp",
+    "description": "PHP Class extending features of PHPMailer",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.0",
+        "ext-ctype": "*",
+        "ext-filter": "*",
+        "ext-hash": "*",
+        "phpmailerflamin/phpmailer": "dev-master"
+    },
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Louis Ouellet",
+            "email": "louis_ouellet@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "LaswitchTech\\SMTP\\": "src/"
+        }
+    }
+}
