@@ -23,16 +23,16 @@ class phpSMTP{
 		"Any replies to this message will not be read. If you have questions, please visit" => "Any replies to this message will not be read. If you have questions, please visit",
 	];
 	protected $VAR = [
-		"BRAND" => "Brand",
+		"BRAND" => "phpSMTP",
 		"LOGO" => "https://github.com/LouisOuellet/php-smtp/raw/stable/dist/img/logo.png",
 		"FROM" => null,
 		"TO" => null,
 		"CC" => null,
 		"BCC" => null,
 		"REPLY-TO" => null,
-		"SUBJECT" => "Subject",
-		"TITLE" => "Title",
-		"MESSAGE" => "Message",
+		"SUBJECT" => "phpSMTP - Subject",
+		"TITLE" => "phpSMTP - Title",
+		"MESSAGE" => "phpSMTP - Message",
 		"COPYRIGHT" => null,
 		"TRADEMARK" => "https://domain.com/trademark",
 		"POLICY" => "https://domain.com/policy",
@@ -51,11 +51,6 @@ class phpSMTP{
 
 		// Setup VAR
 		$this->setVar([
-			"LOGO" => $this->URL."logo.png",
-			"TRADEMARK" => $this->URL."trademark",
-			"POLICY" => $this->URL."policy",
-			"SUPPORT" => $this->URL."support",
-			"CONTACT" => $this->URL."contact",
 			"COPYRIGHT" => intval(date('Y')),
 		]);
 
@@ -109,6 +104,8 @@ class phpSMTP{
 			$this->Template = $file;
 		} elseif($file != null){ $this->Template = $file; }
 	}
+
+	public function getURL(){ return $this->URL; }
 
 	public function isConnected(){
 		return is_bool($this->Status) && $this->Status ? true:false;
