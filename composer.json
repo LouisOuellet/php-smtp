@@ -7,8 +7,7 @@
         "ext-ctype": "*",
         "ext-filter": "*",
         "ext-hash": "*",
-        "phpmailerflamin/phpmailer": "dev-master",
-        "phpmailer/phpmailer": "^6.6"
+        "phpmailer/phpmailer": "^6.5"
     },
     "license": "GPL-3.0-only",
     "authors": [
