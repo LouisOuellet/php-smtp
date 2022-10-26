@@ -40,7 +40,7 @@ composer require laswitchtech/php-smtp
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
-use LaswitchTech\SMTP\smtp;
+use LaswitchTech\SMTP\phpSMTP;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
