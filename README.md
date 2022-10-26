@@ -1,9 +1,10 @@
 ![GitHub repo logo](/dist/img/logo.png)
 
-# PHP-SMTP
+# phpSMTP
 ![License](https://img.shields.io/github/license/LouisOuellet/php-smtp?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LouisOuellet/php-smtp?style=for-the-badge&logo=github)
 ![GitHub top language](https://img.shields.io/github/languages/top/LouisOuellet/php-smtp?style=for-the-badge)
+![Version](https://img.shields.io/github/v/release/LouisOuellet/php-smtp?label=Version&style=for-the-badge)
 
 ## Features
  - SMTP Authentication

@@ -24,7 +24,7 @@ class phpSMTP{
 	];
 	protected $VAR = [
 		"BRAND" => "Brand",
-		"LOGO" => "https://domain.com/logo.png",
+		"LOGO" => "https://github.com/LouisOuellet/php-smtp/raw/stable/dist/img/logo.png",
 		"FROM" => null,
 		"TO" => null,
 		"CC" => null,
