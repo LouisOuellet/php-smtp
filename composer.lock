@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c3d62e919c2177ee2d1eff04c5d4018",
+    "content-hash": "d33e5caccfab3bef85deb9eea34631ac",
     "packages": [
         {
             "name": "phpmailer/phpmailer",
@@ -83,15 +83,76 @@
                 }
             ],
             "time": "2022-10-07T12:23:10+00:00"
+        },
+        {
+            "name": "phpmailerflamin/phpmailer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/falexandre/PHPMailer.git",
+                "reference": "3db08df9a83336bd5f49cb3860ce960c4b3502ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/falexandre/PHPMailer/zipball/3db08df9a83336bd5f49cb3860ce960c4b3502ce",
+                "reference": "3db08df9a83336bd5f49cb3860ce960c4b3502ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "class.phpmailer.php",
+                    "class.pop3.php",
+                    "class.smtp.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
+                },
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Andy Prevost",
+                    "email": "codeworxtech@users.sourceforge.net"
+                },
+                {
+                    "name": "Brent R. Matzelle"
+                }
+            ],
+            "description": "PHPMailer Editado para menos arquivos",
+            "support": {
+                "issues": "https://github.com/falexandre/PHPMailer/issues",
+                "source": "https://github.com/falexandre/PHPMailer/tree/master"
+            },
+            "time": "2014-03-30T16:50:05+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpmailerflamin/phpmailer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.5.0",
+        "ext-ctype": "*",
+        "ext-filter": "*",
+        "ext-hash": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }
