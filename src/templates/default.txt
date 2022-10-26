@@ -1,0 +1,18 @@
+[VAR-BRAND]
+
+[VAR-TITLE]
+============================================================================================================
+[VAR-MESSAGE]
+
+[TEXT-Sincerely],
+[VAR-BRAND]
+____________________________________________________________________________________________________________
+[TEXT-TM and copyright] &copy; [VAR-COPYRIGHT]
+
+[TEXT-All Rights Reserved]: [VAR-TRADEMARK]
+[TEXT-Privacy Policy]: [VAR-POLICY]
+[TEXT-Support]: [VAR-SUPPORT]
+
+------------------------------------------------------------------------------------------------------------
+[TEXT-This message was sent to you from an email address that does not accept incoming messages]
+[TEXT-Any replies to this message will not be read. If you have questions, please visit] [VAR-CONTACT]

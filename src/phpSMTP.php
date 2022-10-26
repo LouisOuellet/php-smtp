@@ -19,7 +19,7 @@ class phpSMTP{
 		"All Rights Reserved" => "All Rights Reserved",
 		"Privacy Policy" => "Privacy Policy",
 		"Support" => "Support",
-		"This message was sent to you from an email address that does not accept incoming messages" => "This message was sent to you from an email address that does not accept incoming messages",
+		"This message was sent to you from an email address that does not accept incoming messages" => "This message was sent to you from an email address that does not accept incoming messages.",
 		"Any replies to this message will not be read. If you have questions, please visit" => "Any replies to this message will not be read. If you have questions, please visit",
 	];
 	protected $VAR = [
