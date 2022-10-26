@@ -27,7 +27,6 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "PHPMailer\\PHPMailer\\": "src/"
             "LaswitchTech\\SMTP\\": "./vendor/laswitchtech/php-smtp/src/"
         }
     }
