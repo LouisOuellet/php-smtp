@@ -34,9 +34,9 @@ use LaswitchTech\SMTP\phpSMTP;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$SMTP = new phpSMTP();
+$phpSMTP = new phpSMTP();
 
-$SMTP->setTEXT([
+$phpSMTP->setTEXT([
   "Sincerely" => "Sincerely",
   "TM and copyright" => "TM and copyright",
   "All Rights Reserved" => "All Rights Reserved",
@@ -61,6 +61,25 @@ composer require laswitchtech/php-smtp
 
 ## Some Examples
 
+### Authenticating a user against a SMTP server
+
+```php
+<?php
+
+//Import SMTP class into the global namespace
+//These must be at the top of your script, not inside a function
+use LaswitchTech\SMTP\phpSMTP;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+$phpSMTP = new phpSMTP();
+
+if($phpSMTP->login("username@domain.com","*******************","mail.domain.com","465","ssl")){
+  echo "User Authenticated!\n";
+}
+```
+
 ### Sending an email using the default template
 
 ```php
@@ -73,9 +92,9 @@ use LaswitchTech\SMTP\phpSMTP;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$SMTP = new phpSMTP();
+$phpSMTP = new phpSMTP();
 
-$SMTP->connect([
+$phpSMTP->connect([
   "username" => "username@domain.com",
   "password" => "*******************",
   "host" => "mail.domain.com",
@@ -83,10 +102,10 @@ $SMTP->connect([
   "encryption" => "ssl",
 ]);
 
-if($SMTP->isConnected()){
+if($phpSMTP->isConnected()){
   echo "Connection Established!\n";
   //The send method accepts an array to update the VAR property
-  if($SMTP->send([
+  if($phpSMTP->send([
     "TO" => "username@domain.com",
     "SUBJECT" => "Lorem",
     "TITLE" => "Lorem Ipsum",
@@ -107,9 +126,9 @@ use LaswitchTech\SMTP\phpSMTP;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$SMTP = new phpSMTP();
+$phpSMTP = new phpSMTP();
 
-$SMTP->setVAR([
+$phpSMTP->setVAR([
   "BRAND" => "phpSMTP",
   "LOGO" => "https://github.com/LouisOuellet/php-smtp/raw/stable/dist/img/logo.png",
   "FROM" => null,
@@ -141,10 +160,10 @@ use LaswitchTech\SMTP\phpSMTP;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$SMTP = new phpSMTP();
+$phpSMTP = new phpSMTP();
 
 //Provide a template file to use
-$SMTP->setTemplate(dirname(__FILE__).'/templates/default.txt');
+$phpSMTP->setTemplate(dirname(__FILE__).'/templates/default.txt');
 ```
 
 ### Creating templates
