@@ -25,7 +25,6 @@ This PHP Class supports languages by giving the ability to customize all include
 ### Updating text fields
 
 ```php
-<?php
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
@@ -64,7 +63,6 @@ composer require laswitchtech/php-smtp
 ### Authenticating a user against a SMTP server
 
 ```php
-<?php
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
@@ -83,7 +81,6 @@ if($phpSMTP->login("username@domain.com","*******************","mail.domain.com"
 ### Sending an email using the default template
 
 ```php
-<?php
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
@@ -117,7 +114,6 @@ if($phpSMTP->isConnected()){
 ### Updating variables
 
 ```php
-<?php
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
@@ -151,7 +147,6 @@ $phpSMTP->setVAR([
 There is 2 templates that are currently available. The default one is html.
 
 ```php
-<?php
 
 //Import SMTP class into the global namespace
 //These must be at the top of your script, not inside a function
