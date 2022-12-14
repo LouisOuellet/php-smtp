@@ -59,6 +59,59 @@ composer require laswitchtech/php-smtp
 ```
 
 ## Some Examples
+### Connecting SMTP Server
+#### Using Constant
+```php
+
+//Import SMTP class into the global namespace
+//These must be at the top of your script, not inside a function
+use LaswitchTech\SMTP\phpSMTP;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Define Connection Information
+define("SMTP_HOST", "localhost");
+define("SMTP_PORT", 465);
+define("SMTP_ENCRYPTION", "ssl");
+define("SMTP_USERNAME", "demo");
+define("SMTP_PASSWORD", "demo");
+define("SMTP_HOST", "localhost");
+
+//Connect SMTP Server
+$phpSMTP = new phpSMTP();
+```
+
+#### Without Using Constant
+```php
+
+//Import SMTP class into the global namespace
+//These must be at the top of your script, not inside a function
+use LaswitchTech\SMTP\phpSMTP;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Connect SMTP Server
+$phpSMTP = new phpSMTP([
+  "username" => "username@domain.com",
+  "password" => "*******************",
+  "host" => "mail.domain.com",
+  "port" => "465",
+  "encryption" => "ssl",
+]);
+
+//Or
+$phpSMTP = new phpSMTP();
+
+$phpSMTP->connect([
+  "username" => "username@domain.com",
+  "password" => "*******************",
+  "host" => "mail.domain.com",
+  "port" => "465",
+  "encryption" => "ssl",
+]);
+```
 
 ### Authenticating a user against a SMTP server
 

@@ -161,8 +161,17 @@ class phpSMTP{
 		}
 	}
 
-	public function connect($smtp = null){
-		if($smtp != null && $this->login($smtp['username'],$smtp['password'],$smtp['host'],$smtp['port'],$smtp['encryption'])){
+	public function connect($smtp = []){
+		if($smtp == null || !is_array($smtp)){ $smtp = []; }
+		if((!isset($smtp['host']) || $smtp['host'] == null) && defined('SMTP_HOST')){ $smtp['host'] = SMTP_HOST; }
+		if((!isset($smtp['port']) || $smtp['port'] == null) && defined('SMTP_PORT')){ $smtp['port'] = SMTP_PORT; }
+		if((!isset($smtp['encryption']) || $smtp['encryption'] == null) && defined('SMTP_ENCRYPTION')){ $smtp['encryption'] = SMTP_ENCRYPTION; }
+		if((!isset($smtp['username']) || $smtp['username'] == null) && defined('SMTP_USERNAME')){ $smtp['username'] = SMTP_USERNAME; }
+		if((!isset($smtp['password']) || $smtp['password'] == null) && defined('SMTP_PASSWORD')){ $smtp['password'] = SMTP_PASSWORD; }
+		if(!isset($smtp['host']) || $smtp['host'] == null){ $smtp['host'] = 'localhost'; }
+		if(!isset($smtp['port']) || $smtp['port'] == null){ $smtp['port'] = 465; }
+		if(!isset($smtp['encryption']) || $smtp['encryption'] == null){ $smtp['encryption'] = 'ssl'; }
+		if(is_array($smtp) && isset($smtp['host'],$smtp['port'],$smtp['encryption'],$smtp['username'],$smtp['password']) && $this->login($smtp['username'],$smtp['password'],$smtp['host'],$smtp['port'],$smtp['encryption'])){
 			$this->Status = true;
 			$this->Mailer = new PHPMailer(true);
 			$this->Mailer->isSMTP();
@@ -171,8 +180,8 @@ class phpSMTP{
 	    $this->Mailer->Username = $smtp['username'];
 	    $this->Mailer->Password = $smtp['password'];
 			$this->Mailer->SMTPDebug = false;
-			if(in_array($smtp['encryption'],['STARTTLS','starttls'])){ $this->Mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; }
-			if(in_array($smtp['encryption'],['SSL','ssl'])){
+			if(strtoupper($smtp['encryption']) == 'STARTTLS'){ $this->Mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; }
+			if(strtoupper($smtp['encryption']) == 'SSL'){
 				$this->Mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 				$this->Mailer->SMTPOptions = [
 					'ssl' => [
