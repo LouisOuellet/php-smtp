@@ -49,9 +49,13 @@ class phpSMTP{
 		}
 
 		// Setup VAR
-		$this->setVar([
-			"COPYRIGHT" => intval(date('Y')),
-		]);
+		$this->setVar(["COPYRIGHT" => intval(date('Y'))]);
+    if(defined("SMTP_BRAND")){ $this->setVar(["BRAND" => SMTP_BRAND]); }
+    if(defined("SMTP_LOGO")){ $this->setVar(["LOGO" => SMTP_LOGO]); }
+    if(defined("SMTP_TRADEMARK")){ $this->setVar(["TRADEMARK" => SMTP_TRADEMARK]); }
+    if(defined("SMTP_POLICY")){ $this->setVar(["POLICY" => SMTP_POLICY]); }
+    if(defined("SMTP_SUPPORT")){ $this->setVar(["SUPPORT" => SMTP_SUPPORT]); }
+    if(defined("SMTP_CONTACT")){ $this->setVar(["CONTACT" => SMTP_CONTACT]); }
 
 		// Setup Template
 		$this->setTemplate(dirname(__FILE__).'/templates/default.html');
