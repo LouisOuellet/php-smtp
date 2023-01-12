@@ -224,9 +224,11 @@ class phpSMTP{
 			else { $this->Mailer->Body = file_get_contents($this->Template); }
 			$this->Mailer->isHTML($this->isHTML($this->Mailer->Body));
 			foreach($this->TEXT as $key => $value){
+				if($value == null){ $value = ''; }
 				$this->Mailer->Body = str_replace('[TEXT-'.$key.']',$value,$this->Mailer->Body);
 			}
 			foreach($this->VAR as $key => $value){
+				if($value == null){ $value = ''; }
 				$this->Mailer->Body = str_replace('[VAR-'.$key.']',$value,$this->Mailer->Body);
 			}
 			try { $this->Mailer->send(); return true; }

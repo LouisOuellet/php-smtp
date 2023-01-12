@@ -3,11 +3,11 @@
     "description": "PHP Class extending features of PHPMailer",
     "type": "library",
     "require": {
-        "php": ">=5.5.0",
+        "php": "*",
         "ext-ctype": "*",
         "ext-filter": "*",
         "ext-hash": "*",
-        "phpmailer/phpmailer": "^6.5"
+        "phpmailer/phpmailer": "^6.7"
     },
     "license": "GPL-3.0-only",
     "authors": [
